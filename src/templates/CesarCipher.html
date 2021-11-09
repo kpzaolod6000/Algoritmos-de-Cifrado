@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+
+{% block navbar_right %}
+              
+<div class="collapse navbar-collapse  d-flex justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+        <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('CesarCipher') }}">Cifrado de Cesar</a>
+            <!-- url_for('about') llamando a la funcion about que esta en index -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('PlayfairCipher') }}">Cifrado de Playfair</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('TranspInterrm') }}">Descifrado de Transposición Interrumpida</a>
+        </li>
+    </ul>
+</div>
+  
+{% endblock %}
+
+{% block content %}
+<script src="{{ url_for('static', filename='js/requestCiCesar.js') }}"></script>
+
+<!-- Background image -->
+<div class="p-5 text-center bg-image" style="
+/* background-image: url('https://mdbootstrap.com/img/new/slides/041.jpg'); */
+background-image: url('https://somnomed.com/wp-content/uploads/2016/12/website-background-1.jpg');
+background-size: 100% 100%;
+height: 400px;">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white" id="form-Cesar">
+                <h1 class="mb-3">Codificador / Descodificador de cifrado César</h1>
+
+                <div class="input-group mb-3">
+                    <textarea class="form-control" id = "message"  rows="5" aria-label="With textarea"></textarea>
+                </div>
+                
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+                        <!-- <span class="input-group-text" id="inputGroup-sizing-sm">Numero de posiciones a desplazar</span> -->
+                        <span class="label_left" id="inputGroup-sizing-sm" style = "padding-right: 1em;">Numero de posiciones a desplazar: </span>
+                    </div>
+                    <input type="text" id = "key"  class="input_number" style = "width:3em;">
+                </div>
+
+                <div class="d-flex justify-content-start">
+
+                    <button type="button" id="encrypt" class="btn btn-primary">Codificar</button>
+                    <button type="button" id="decrypt" class="btn btn-primary">Descodificar</button>
+                    <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Codificar</a> -->
+                    <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Descodificar</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

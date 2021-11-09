@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center h-100" style="margin-top: 150px;">
+    <div class="text-white" id="page-main">
+        <h1 class="mb-3">Algoritmo de Cifrado y Descifrado</h1>
+    </div>
+</div>
+<div class="d-flex justify-content-center align-items-center h-100" style="margin-top: 10px;">
+    <a href="{{url_for('CesarCipher') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="margin-right: 20px;">Cesar</a>
+    <a href="{{url_for('PlayfairCipher') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="margin-right: 20px;">Playfair</a>
+    <a href="{{url_for('TranspInterrm') }}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="margin-right: 20px;">Transposición Interrumpida</a>
+</div>
+{% endblock %}

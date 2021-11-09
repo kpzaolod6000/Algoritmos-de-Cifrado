@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SofC</title>
+
+    <!-- link bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/static/css/">  esta es una forma de llamar el archivo css-->
+    <!-- otra forma de llamar usando python es:  -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <!-- para eventos jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Algoritmo de Cifrado y Descifrado <br>
+                    Transposición Y Sustitución</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                            
+                {% block navbar_right %}
+                
+                {% endblock %}
+            </div>
+        </nav>
+    </header>
+</head>
+
+<body>
+    {% block content %}
+    <!--aca se coloca todo el codigo de otras paginas que reutilizan este layout  -->
+    {% endblock %}
+</body>
+
+</html>
+
+<!-- esta sera mi plantilla como motor de plantillas la cual sera extendida en todo mi proyecto
+como son el head y el header y navBar-->

@@ -1,0 +1,87 @@
+#tam-matrix{
+    font-size: 14px;    
+}
+
+#key-matrix{
+    padding-left: 25px;
+}
+#inputState{
+    padding: 8px;
+}
+
+#Calculate{
+    height: 50px;
+}
+
+#textTR{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #2ecece;
+    color: #fff;
+    outline: none;
+
+}
+
+#preproccesTR{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #2ecece;
+    color: #fff;
+    outline: none;
+
+}
+.webflow-style-input{
+    width: 100%;
+    height: 50px;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+.webflow-style-input input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    color: #fff;
+    padding-top: 20px;
+    border: none;
+    outline: 0px;
+}
+.webflow-style-input .lbl-nombre{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #c7c7c7;
+}
+.webflow-style-input .lbl-nombre:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #2ecece;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+.text-nomb{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+.webflow-style-input input:focus + .lbl-nombre .text-nomb,.form input:valid + .lbl-nombre .text-nomb{
+    transform: translateY(-250%); /*150*/
+    font-size: 12px;
+    color: #707a7a;
+}
+.webflow-style-input input:focus + .lbl-nombre:after, .form input:valid + .lbl-nombre:after{
+    transform: translateX(0%);
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+ .webflow-style-input{
+    width:85%;
+}
