@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block navbar_right %}
+
+<div class="collapse navbar-collapse  d-flex justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+        <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('CesarCipher') }}">Cifrado de Cesar</a>
+            <!-- url_for('about') llamando a la funcion about que esta en index -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('PlayfairCipher') }}">Cifrado de Playfair</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url_for('PlayfairCipher') }}">Descifrado de Transposición Interrumpida</a>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/TransInterrumpida.css')}}">
+<script src="{{ url_for('static', filename='js/requestTransInterrumpida.js') }}"></script>
+
+<div class="p-5 text-center bg-image" style="
+background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1711/Gradients_slice_blue_green_2017_Design_HD_Wallpaper_1366x768.jpg');
+background-size: 100% 100%;
+height: 480px;">
+    <div class="container">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white" id="form-Cesar">
+                    <h1 class="mb-3">Descifrado de Transposición Interrumpida</h1>
+
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="messageTI" rows="7" style="width: 525px; margin-right: 30px;"
+                            aria-label="With textarea"></textarea>
+
+                        <div id="key_matrix" style="width: 225px; padding-top: 20px;">
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="webflow-style-input">
+                                    <input type="text" id="keyTI" required>
+                                    <label class="lbl-nombre">
+                                        <span class="text-nomb">Clave: </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="title-key-matrix"></div>
+                            <div id="key-matrix" class=""></div>
+
+                        </div>
+                    </div>
+
+                    <label for="text-tr" class="d-flex justify-content-start">Texto Descifrado</label>
+                    <div class="input-group mb-3">
+                        <textarea type="text" class="form-control" id="textTI" disabled></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" id="DecryptTI" class="btn btn-primary">Descifrar</button>
+                    </div>
+
+                    <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Codificar</a> -->
+                    <!-- <a class="btn btn-outline-light btn-lg" href="#!" role="button">Descodificar</a> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
